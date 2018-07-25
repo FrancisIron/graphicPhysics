@@ -81,20 +81,12 @@
             <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Error, intentelo de nuevo" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
          </children>
       </GridPane>
-      <Button mnemonicParsing="false" onAction="#actionCalcular" prefHeight="91.0" prefWidth="140.0" text="Calcular" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets left="55.0" />
-         </GridPane.margin>
+      <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#simular" prefHeight="100.0" prefWidth="200.0" text="Calcular" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
-      <Button mnemonicParsing="false" onAction="#simular" prefHeight="91.0" prefWidth="140.0" text="Simular" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-         <font>
-            <Font size="28.0" />
+            <Font size="38.0" />
          </font>
          <GridPane.margin>
-            <Insets right="45.0" />
+            <Insets />
          </GridPane.margin></Button>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
         <columnConstraints>
@@ -106,27 +98,19 @@
         </columnConstraints>
         <rowConstraints>
             <RowConstraints maxHeight="24.0" minHeight="9.0" prefHeight="12.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="36.0" minHeight="5.0" prefHeight="18.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="41.0" minHeight="5.0" prefHeight="22.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="39.0" minHeight="5.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="41.0" minHeight="5.0" prefHeight="27.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Velocidad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
-            <TextField id="vel" fx:id="vel" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="114.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
-            <TextField id="time" fx:id="time" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="107.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salidas" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ΔV" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ΔU" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <TextField id="difPotencial" fx:id="difPotencial" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="116.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-            <TextField id="difEPotencial" fx:id="difEPotencial" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="107.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="s" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="J" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="m/s" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="V" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" text="Grafico 1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Grafico 2" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Grafico 3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" text="Grafico 4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <LineChart fx:id="chart" createSymbols="false" prefHeight="365.0" prefWidth="358.0" title="Grafico a través del tiempo" GridPane.columnIndex="1" GridPane.rowIndex="1">
