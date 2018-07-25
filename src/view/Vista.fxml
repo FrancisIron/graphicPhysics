@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
@@ -12,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="13.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="353.0" />
@@ -122,13 +129,16 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="V" GridPane.columnIndex="2" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <LineChart GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <LineChart fx:id="chart" createSymbols="false" prefHeight="365.0" prefWidth="358.0" title="Grafico a través del tiempo" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
           <NumberAxis side="LEFT" />
         </yAxis>
+         <effect>
+            <Glow />
+         </effect>
       </LineChart>
    </children>
 </GridPane>

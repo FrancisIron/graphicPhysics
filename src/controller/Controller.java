@@ -1,7 +1,9 @@
 package controller;
 
+import calculate.Formula;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -14,7 +16,6 @@ public class Controller {
     //FXID y atributos de animacion
     private TranslateTransition transition;
 
-    @FXML
     private StackPane stackParticula;
 
     //FXID Entradas
@@ -56,18 +57,37 @@ public class Controller {
     @FXML
     private Text error;
 
+    @FXML
+    private LineChart<?, ?> chart;
+
+    @FXML
     public void onEnterPressed(KeyEvent key) {
         if (key.getCode() == KeyCode.ENTER) {
             simular();
         }
     }
 
+    @FXML
     public double actionCalcular() {
-
-            return 123.0;
+        
+        double sourceVoltage = 0.1; //Reemplazar por los getText de los input
+        int time = 30;//segundos    //Reemplazar por los getText de los input
+        double resistance = 0.2;    //Reemplazar por los getText de los input
+        double capacity = 5;        //Reemplazar por los getText de los input
+        
+        Formula f = new Formula();
+        chart.getData().clear();
+        chart.setLegendVisible(true);
+        chart.setCreateSymbols(false);
+        chart.getData().add(f.resistanceVoltage(sourceVoltage, time, resistance, capacity));;
+        chart.getData().add(f.charge(sourceVoltage, time, resistance, capacity));
+        chart.getData().add(f.condenserVoltage(sourceVoltage, time, resistance, capacity));
+        chart.getData().add(f.current(sourceVoltage, time, resistance, capacity));
+        return 123.0;
 
     }
 
+    @FXML
     public void simular() {
         animationStop();
         error.setVisible(false);
