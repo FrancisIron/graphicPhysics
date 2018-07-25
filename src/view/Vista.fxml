@@ -81,7 +81,7 @@
             <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Error, intentelo de nuevo" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
          </children>
       </GridPane>
-      <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#simular" prefHeight="100.0" prefWidth="200.0" text="Calcular" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+      <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionCalcular" prefHeight="100.0" prefWidth="200.0" text="Calcular" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <font>
             <Font size="38.0" />
          </font>

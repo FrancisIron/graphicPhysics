@@ -89,6 +89,7 @@ public class Controller {
 
     @FXML
     public void simular() {
+        /*
         animationStop();
         error.setVisible(false);
         if (Double.parseDouble(baseCarga.getText()) > 0) {
@@ -101,19 +102,19 @@ public class Controller {
                 error.setVisible(true);
             }
         }
-
+*/
     }
 
     public void animationPlay(double frames) {
-        transition.setDuration(Duration.millis(frames));
+        /* transition.setDuration(Duration.millis(frames));
         transition.setNode(stackParticula);
         transition.setByX(194);
-        transition.play();
+        transition.play();*/
     }
 
     public void animationStop() {
-        transition.stop();
-        stackParticula.setTranslateX(0);
+        /*transition.stop();
+        stackParticula.setTranslateX(0);*/
     }
-
+    
 }
