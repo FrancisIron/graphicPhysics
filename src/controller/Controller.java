@@ -189,7 +189,7 @@ public class Controller {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Easter Egg");
         alert.setHeaderText("Acerca del software");
-        String s ="Este software fue creado y diseñado con un plazo\nde 50,6 horas por Francisco Fierro y Diego Garrido\npara el ramo de Fisica II dictado por la profesora\nMariela Gonzalez.\n\nEspero lo disfrute, como nosotros programandolo.";
+        String s ="Este software fue creado y diseñado con un plazo\nde 50,6 horas por Francisco Fierro y Diego Garrido\npara el ramo de Fisica II dictado por la profesora\nMariela Isabel González Flores.\n\nEspero lo disfrute, como nosotros programandolo.";
         alert.setContentText(s);
         alert.show();
     }
