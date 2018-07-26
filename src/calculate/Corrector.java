@@ -7,7 +7,6 @@ public class Corrector {
     /*De texto*/
     public double createDouble(double shortdecimal, int exp) {
         double calc = shortdecimal * Math.pow(10, exp);
-        System.out.println(calc);
         return calc;
     }
 
