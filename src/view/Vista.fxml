@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="chartContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="13.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="353.0" />
@@ -106,10 +106,10 @@
         </rowConstraints>
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar curva a graficar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <CheckBox fx:id="toggleCarga" mnemonicParsing="false" selected="true" text="Carga" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <CheckBox fx:id="toggelCondensador" mnemonicParsing="false" selected="true" text="Voltaje en Condensador" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <CheckBox fx:id="toggleCorriente" mnemonicParsing="false" selected="true" text="Corriente" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <CheckBox fx:id="toggleResistencia" mnemonicParsing="false" selected="true" text="Voltaje en Resistencia" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <CheckBox fx:id="toggleCarga" mnemonicParsing="false" onMouseClicked="#carga" selected="true" text="Carga" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <CheckBox fx:id="toggleCondensador" mnemonicParsing="false" onMouseClicked="#condensador" selected="true" text="Voltaje en Condensador" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <CheckBox fx:id="toggleCorriente" mnemonicParsing="false" onMouseClicked="#corriente" selected="true" text="Corriente" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <CheckBox fx:id="toggleResistencia" mnemonicParsing="false" onMouseClicked="#resistencia" selected="true" text="Voltaje en Resistencia" GridPane.columnIndex="3" GridPane.rowIndex="5" />
             <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
          </children>
       </GridPane>

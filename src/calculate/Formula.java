@@ -39,7 +39,7 @@ public class Formula {
         series.setName("Carga del Capacitor");
 
         for (int i = 0; i < time; i++) {
-            double result = capacity * sourceVoltage * (Math.exp((-i) / (resistance * capacity)));
+            double result = (capacity * sourceVoltage) * (Math.exp((-i) / (resistance * capacity)));
             series.getData().add(new XYChart.Data("" + i, result));
         }
 
