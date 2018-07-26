@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<GridPane fx:id="chartContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="13.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="353.0" />
@@ -88,13 +88,12 @@
          <GridPane.margin>
             <Insets />
          </GridPane.margin></Button>
-      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <GridPane prefHeight="187.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="55.0" minWidth="10.0" prefWidth="42.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="117.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="71.0" minWidth="10.0" prefWidth="39.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="110.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="43.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="44.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="101.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="0.0" prefWidth="15.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="205.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints maxHeight="24.0" minHeight="9.0" prefHeight="12.0" vgrow="SOMETIMES" />
@@ -106,14 +105,15 @@
             <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salidas" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <Button mnemonicParsing="false" text="Grafico 1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="Grafico 2" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="Grafico 3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" text="Grafico 4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar curva a graficar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <CheckBox fx:id="toggleCarga" mnemonicParsing="false" selected="true" text="Carga" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <CheckBox fx:id="toggelCondensador" mnemonicParsing="false" selected="true" text="Voltaje en Condensador" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <CheckBox fx:id="toggleCorriente" mnemonicParsing="false" selected="true" text="Corriente" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <CheckBox fx:id="toggleResistencia" mnemonicParsing="false" selected="true" text="Voltaje en Resistencia" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <LineChart fx:id="chart" createSymbols="false" prefHeight="365.0" prefWidth="358.0" title="Grafico a través del tiempo" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <LineChart fx:id="chart" createSymbols="false" onScroll="#mouseWheel" prefHeight="365.0" prefWidth="358.0" title="Grafico a través del tiempo" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

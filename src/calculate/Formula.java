@@ -10,7 +10,7 @@ public class Formula {
     public Formula() {
     }
 
-    public Series condenserVoltage(double sourceVoltage, int time, double resistance, double capacity) {
+    public Series condenserVoltage(double sourceVoltage, double time, double resistance, double capacity) {
         series = new Series();
         series.setName("Voltaje en Condensador");
 
@@ -22,7 +22,7 @@ public class Formula {
         return series;
     }
 
-    public Series resistanceVoltage(double sourceVoltage, int time, double resistance, double capacity) {
+    public Series resistanceVoltage(double sourceVoltage, double time, double resistance, double capacity) {
         series = new Series();
         series.setName("Voltaje en Resistencia");
 
@@ -34,7 +34,7 @@ public class Formula {
         return series;
     }
 
-    public Series charge(double sourceVoltage, int time, double resistance, double capacity) {
+    public Series charge(double sourceVoltage, double time, double resistance, double capacity) {
         series = new Series();
         series.setName("Carga del Capacitor");
 
@@ -46,7 +46,7 @@ public class Formula {
         return series;
     }
 
-    public Series current(double sourceVoltage, int time, double resistance, double capacity) {
+    public Series current(double sourceVoltage, double time, double resistance, double capacity) {
         series = new Series();
         series.setName("Corriente");
 
@@ -58,14 +58,3 @@ public class Formula {
         return series;
     }
 }
-
-/////////////////////////////////////////////////////////////////////
-/*
-Para asignar los datos al grafico usar LineChart y asignarlo con el codigo
-
-Formula f = new Formula();
-chart.setCreateSymbols(false);
-chart.getData().add(f.resistanceVoltage(10, 30, 0.002, 5));
-
-(chart es la id del grafico, reemplazar por cada id de los graficos)
-*/
