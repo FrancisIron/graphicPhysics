@@ -71,8 +71,13 @@ public class Controller {
 
     @FXML
     private void mouseWheel(ScrollEvent scroll) {
-        time -= (scroll.getDeltaY() / 100);
-        actionCalcular();
+        if (time > 2 && scroll.getDeltaY() > 0) {
+            time--;
+            actionCalcular();
+        } else if (scroll.getDeltaY() < 0) {
+            time++;
+            actionCalcular();
+        }
     }
 
     @FXML
@@ -104,7 +109,6 @@ public class Controller {
                 chart.getData().add(cargaData);
             } else {
                 chart.getData().remove(cargaData);
-                cargaData = null;
             }
         }
     }
@@ -116,7 +120,6 @@ public class Controller {
                 chart.getData().add(resistenciaData);
             } else {
                 chart.getData().remove(resistenciaData);
-                resistenciaData = null;
             }
         }
     }
@@ -128,7 +131,6 @@ public class Controller {
                 chart.getData().add(condensadorData);
             } else {
                 chart.getData().remove(condensadorData);
-                condensadorData = null;
             }
         }
     }
@@ -140,7 +142,6 @@ public class Controller {
                 chart.getData().add(corrienteData);
             } else {
                 chart.getData().remove(corrienteData);
-                corrienteData = null;
             }
         }
     }
