@@ -77,13 +77,13 @@ public class Controller {
 
     private void validarExp() {
         if (expCapacitancia.getText().length() == 0) {
-            expCapacitancia.setText("1");
+            expCapacitancia.setText("0");
         }
         if (expResistencia.getText().length() == 0) {
-            expResistencia.setText("1");
+            expResistencia.setText("0");
         }
         if (expVoltaje.getText().length() == 0) {
-            expVoltaje.setText("1");
+            expVoltaje.setText("0");
         }
     }
 
