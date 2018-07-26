@@ -3,8 +3,7 @@ package controller;
 import calculate.Corrector;
 import calculate.Formula;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
@@ -111,7 +110,12 @@ public class Controller {
             checkCondensador(toggleCondensador.isSelected());
             checkCorriente(toggleCorriente.isSelected());
         } else {
-            error.setVisible(true);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("(╯°□°）╯︵ ┻━┻");
+            alert.setHeaderText("Error al ingresar los datos");
+            String s ="Intentelo de nuevo, por favor";
+            alert.setContentText(s);
+            alert.show();
         }
     }
 
@@ -177,5 +181,16 @@ public class Controller {
     @FXML
     private void corriente(MouseEvent event) {
         checkCorriente(toggleCorriente.isSelected());
+    }
+
+    //Easter egg
+
+    public void easterEgg(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Easter Egg");
+        alert.setHeaderText("Acerca del software");
+        String s ="Este software fue creado y diseñado con un plazo\nde 50,6 horas por Francisco Fierro y Diego Garrido\npara el ramo de Fisica II dictado por la profesora\nMariela Gonzalez.\n\nEspero lo disfrute, como nosotros programandolo.";
+        alert.setContentText(s);
+        alert.show();
     }
 }

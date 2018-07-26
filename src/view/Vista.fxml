@@ -160,5 +160,10 @@
             <Glow />
          </effect>
       </LineChart>
+      <Button fx:id="btnAbout" mnemonicParsing="false" onAction="#easterEgg" text="(!)" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
    </children>
 </GridPane>
