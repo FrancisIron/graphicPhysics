@@ -1,5 +1,6 @@
 package controller;
 
+import calculate.Corrector;
 import calculate.Formula;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -7,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
-import javafx.event.ActionEvent;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.input.MouseEvent;
@@ -16,10 +16,11 @@ import javafx.scene.input.ScrollEvent;
 public class Controller {
 
     private double sourceVoltage = 0;
-    private double time = 30;
+    private double time = 0;
     private double resistance = 0;
     private double capacity = 0;
     private final Formula f = new Formula();
+    private final Corrector juanito = new Corrector();
     private Series condensadorData = null;
     private Series resistenciaData = null;
     private Series cargaData = null;
@@ -28,29 +29,21 @@ public class Controller {
     //FXID Entradas
     @FXML
     private TextField baseVoltaje;
-
     @FXML
     private TextField expVoltaje;
-
     @FXML
-    private TextField baseCarga;
-
+    private TextField baseResistencia;
     @FXML
-    private TextField expCarga;
-
+    private TextField expResistencia;
     @FXML
-    private TextField potencial;
-
+    private TextField tiempo;
     @FXML
-    private TextField campoElectrico;
-
+    private TextField baseCapacitancia;
     @FXML
-    private TextField distancia;
-
+    private TextField expCapacitancia;
     //FXID Otros
     @FXML
     private Text error;
-
     @FXML
     private LineChart<?, ?> chart;
     @FXML
@@ -72,34 +65,54 @@ public class Controller {
     @FXML
     private void mouseWheel(ScrollEvent scroll) {
         if (time > 2 && scroll.getDeltaY() > 0) {
-            time--;
+            int t = Integer.parseInt(tiempo.getText()) - 1;
+            tiempo.setText("" + (t));
             actionCalcular();
         } else if (scroll.getDeltaY() < 0) {
-            time++;
+            int t = Integer.parseInt(tiempo.getText()) + 1;
+            tiempo.setText("" + (t));
             actionCalcular();
+        }
+    }
+
+    private void validarExp() {
+        if (expCapacitancia.getText().length() == 0) {
+            expCapacitancia.setText("1");
+        }
+        if (expResistencia.getText().length() == 0) {
+            expResistencia.setText("1");
+        }
+        if (expVoltaje.getText().length() == 0) {
+            expVoltaje.setText("1");
         }
     }
 
     @FXML
     public void actionCalcular() {
-        condensadorData = new Series();
-        resistenciaData = new Series();
-        cargaData = new Series();
-        corrienteData = new Series();
-        sourceVoltage = 0.01; //Reemplazar por los getText de los input
-        //time = 30;//segundos    //Reemplazar por los getText de los input
-        resistance = 0.2;    //Reemplazar por los getText de los input
-        capacity = 10;        //Reemplazar por los getText de los input
+        validarExp();
+        if (juanito.validarPotencia(baseVoltaje, expVoltaje) && juanito.validarPotencia(baseCapacitancia, expCapacitancia) && juanito.validarPotencia(baseResistencia, expResistencia) && juanito.validarNumero(tiempo)) {
+            condensadorData = new Series();
+            resistenciaData = new Series();
+            cargaData = new Series();
+            corrienteData = new Series();
 
-        chart.getData().clear();
-        chart.setLegendVisible(true);
-        chart.setCreateSymbols(false);
+            error.setVisible(false);
+            sourceVoltage = juanito.createDouble(Double.parseDouble(baseVoltaje.getText()), Integer.parseInt(expVoltaje.getText()));
+            time = Integer.parseInt(tiempo.getText());
+            resistance = juanito.createDouble(Double.parseDouble(baseResistencia.getText()), Integer.parseInt(expResistencia.getText()));
+            capacity = juanito.createDouble(Double.parseDouble(baseCapacitancia.getText()), Integer.parseInt(expCapacitancia.getText()));
 
-        checkCarga(toggleCarga.isSelected());
-        checkResistencia(toggleResistencia.isSelected());
-        checkCondensador(toggleCondensador.isSelected());
-        checkCorriente(toggleCorriente.isSelected());
+            chart.getData().clear();
+            chart.setLegendVisible(true);
+            chart.setCreateSymbols(false);
 
+            checkCarga(toggleCarga.isSelected());
+            checkResistencia(toggleResistencia.isSelected());
+            checkCondensador(toggleCondensador.isSelected());
+            checkCorriente(toggleCorriente.isSelected());
+        } else {
+            error.setVisible(true);
+        }
     }
 
     private void checkCarga(boolean show) {
