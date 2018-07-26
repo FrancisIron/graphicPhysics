@@ -46,24 +46,24 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="baseMasa" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <TextField fx:id="baseVoltaje" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Voltaje" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Resistencia" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <TextField fx:id="expMasa" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="48.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <TextField fx:id="expVoltaje" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="48.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="2.0" />
                </GridPane.margin></TextField>
-            <TextField fx:id="baseCarga" layoutX="28.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="51.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <TextField fx:id="baseResistencia" layoutX="28.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="51.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Capacitancia" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="x10^" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Text layoutX="71.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x10^" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <TextField fx:id="expCarga" layoutX="101.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <TextField fx:id="expResistencia" layoutX="101.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="2.0" />
                </GridPane.margin></TextField>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Entradas" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
-            <TextField fx:id="potencial" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+            <TextField fx:id="tiempo" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="s" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="2.0" />
@@ -80,9 +80,9 @@
                <GridPane.margin>
                   <Insets left="2.0" />
                </GridPane.margin></Text>
-            <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Error, intentelo de nuevo" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-            <TextField fx:id="baseCarga1" layoutX="223.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="51.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <TextField fx:id="expCarga1" layoutX="304.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Error, intentelo de nuevo" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <TextField fx:id="baseCapacitancia" layoutX="223.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="51.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <TextField fx:id="expCapacitancia" layoutX="304.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
             <Text layoutX="101.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x10^" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
          </children>
       </GridPane>
@@ -104,7 +104,7 @@
             <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar curva a graficar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar curva a graficar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font></Text>

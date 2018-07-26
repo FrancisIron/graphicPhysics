@@ -27,10 +27,10 @@ public class Controller {
 
     //FXID Entradas
     @FXML
-    private TextField baseMasa;
+    private TextField baseVoltaje;
 
     @FXML
-    private TextField expMasa;
+    private TextField expVoltaje;
 
     @FXML
     private TextField baseCarga;
