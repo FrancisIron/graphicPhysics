@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<GridPane fx:id="chartContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="13.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="353.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.0" minWidth="10.0" prefWidth="397.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="23.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="0.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="393.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="407.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="0.0" prefWidth="0.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints maxHeight="225.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="244.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="246.0" minHeight="10.0" prefHeight="178.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="254.0" minHeight="10.0" prefHeight="254.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="195.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <GridPane GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -53,16 +47,15 @@
         </rowConstraints>
          <children>
             <TextField fx:id="baseMasa" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Masa" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Carga" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Voltaje" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Resistencia" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
             <TextField fx:id="expMasa" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="48.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="2.0" />
                </GridPane.margin></TextField>
             <TextField fx:id="baseCarga" layoutX="28.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="51.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Potencial" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Campo Electrico" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Distancia" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Capacitancia" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="x10^" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Text layoutX="71.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x10^" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <TextField fx:id="expCarga" layoutX="101.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
@@ -71,49 +64,65 @@
                </GridPane.margin></TextField>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Entradas" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
             <TextField fx:id="potencial" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
-            <TextField fx:id="campoElectrico" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="131.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
-            <TextField fx:id="distancia" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="129.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="cm" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="V" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N/m" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kg" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="C" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="s" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="F" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="V" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ω" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin></Text>
             <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Error, intentelo de nuevo" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+            <TextField fx:id="baseCarga1" layoutX="223.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="51.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <TextField fx:id="expCarga1" layoutX="304.0" layoutY="55.0" maxWidth="-Infinity" onKeyReleased="#onEnterPressed" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Text layoutX="101.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x10^" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionCalcular" prefHeight="100.0" prefWidth="200.0" text="Calcular" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-         <font>
-            <Font size="38.0" />
-         </font>
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin></Button>
-      <GridPane prefHeight="187.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <GridPane prefHeight="187.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="44.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="101.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="0.0" prefWidth="15.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="205.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="62.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="89.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="0.0" prefWidth="94.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="113.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="48.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints maxHeight="24.0" minHeight="9.0" prefHeight="12.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="39.0" minHeight="5.0" prefHeight="29.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="41.0" minHeight="5.0" prefHeight="27.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="41.0" minHeight="5.0" prefHeight="22.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar curva a graficar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccionar curva a graficar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="20.0" />
+               </font></Text>
             <CheckBox fx:id="toggleCarga" mnemonicParsing="false" onMouseClicked="#carga" selected="true" text="Carga" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <CheckBox fx:id="toggleCondensador" mnemonicParsing="false" onMouseClicked="#condensador" selected="true" text="Voltaje en Condensador" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <CheckBox fx:id="toggleCondensador" mnemonicParsing="false" onMouseClicked="#condensador" selected="true" text="Voltaje en Condensador" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3" />
             <CheckBox fx:id="toggleCorriente" mnemonicParsing="false" onMouseClicked="#corriente" selected="true" text="Corriente" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <CheckBox fx:id="toggleResistencia" mnemonicParsing="false" onMouseClicked="#resistencia" selected="true" text="Voltaje en Resistencia" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <LineChart fx:id="chart" createSymbols="false" onScroll="#mouseWheel" prefHeight="365.0" prefWidth="358.0" title="Grafico a través del tiempo" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#actionCalcular" text="Calcular" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="120.0" />
+         </GridPane.margin>
+      </Button>
+      <LineChart fx:id="chart" createSymbols="false" onScroll="#mouseWheel" prefHeight="800.0" prefWidth="800.0" title="Grafico a través del tiempo" GridPane.columnIndex="1" GridPane.columnSpan="2">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
